@@ -1,27 +1,83 @@
-# Challenger Clyvo Vet API
+# 🐾 ClyvoVet API
 
-API RESTful desenvolvida em ASP.NET Core.
+API RESTful desenvolvida em ASP.NET Core 8 para gerenciamento de pets, responsáveis e consultas veterinárias.
 
-## Tecnologias
+---
 
-- ASP.NET Core
+# 🚀 Tecnologias
+
+- ASP.NET Core 8
+- C#
 - Entity Framework Core
-- Oracle
-- Swagger
+- Oracle Database
+- Swagger/OpenAPI
 
-## Como executar
+---
 
-1. Clone o projeto
-2. Configure appsettings.json
-3. Execute migrations
-4. Rode a aplicação
+# 📦 Funcionalidades
 
-## Endpoints
+- CRUD de Pets
+- CRUD de Responsáveis
+- CRUD de Consultas
+- Integração com Oracle
+- Documentação Swagger
 
-GET /api/pets
+---
 
-POST /api/pets
+# 🔗 Endpoints
 
-PUT /api/pets/{id}
+## Pets
 
-DELETE /api/pets/{id}
+- GET /api/Pets
+- GET /api/Pets/{id}
+- GET /api/Pets/especie/{especie}
+- POST /api/Pets
+- PUT /api/Pets/{id}
+- DELETE /api/Pets/{id}
+
+## Responsáveis
+
+- GET /api/Responsaveis
+- GET /api/Responsaveis/{id}
+- POST /api/Responsaveis
+- PUT /api/Responsaveis/{id}
+- DELETE /api/Responsaveis/{id}
+
+## Consultas
+
+- GET /api/Consultas
+- GET /api/Consultas/{id}
+- GET /api/Consultas/status/{status}
+- POST /api/Consultas
+- PUT /api/Consultas/{id}
+- DELETE /api/Consultas/{id}
+
+---
+
+# ⚙️ Como executar
+
+```bash
+dotnet restore
+dotnet ef database update
+dotnet run
+```
+
+---
+
+# 📘 Swagger
+
+Acesse:
+
+```bash
+http://localhost:5043/swagger
+```
+
+---
+
+# 👩‍💻 Desenvolvido por
+
+Larissa Juvenal de Magalhães RM566457
+Matheus Gianolli RM565258
+Júlia Kauane Menezes Farias RM565568
+Gustavo Ribeiro Permagnani RM564995
+Enzo Xavier Coelho RM563379
