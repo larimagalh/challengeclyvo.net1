@@ -71,6 +71,8 @@ Acesse:
 ```bash
 http://localhost:5043/swagger
 ```
+<img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/939e370f-9729-4963-b8ca-8b76f26c8a98" />
+
 
 ---
 
