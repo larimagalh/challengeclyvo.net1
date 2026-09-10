@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ClyvoVet.API.Models
+namespace ClyvoVet.API.Dominio.Models
 {
     public class Consulta
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdConsulta { get; set; }
 
         public int IdPet { get; set; }
@@ -20,5 +22,9 @@ namespace ClyvoVet.API.Models
         public string Status { get; set; }
 
         public DateTime DataCriacao { get; set; } = DateTime.Now;
+
+
     }
+
+ 
 }
