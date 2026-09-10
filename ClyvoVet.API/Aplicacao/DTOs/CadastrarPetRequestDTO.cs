@@ -1,3 +1,5 @@
-﻿namespace ClyvoVet.API.Aplicação.DTOs;
+﻿using System.Globalization;
 
-public record CadasttrarPetRequest(string Nome, decimal Preco, int Estoque);
+namespace ClyvoVet.API.Aplicação.DTOs;
+
+public record CadastrarPetRequest(Guid IdPet, string nome , string Raca, double peso, string statusSaude);

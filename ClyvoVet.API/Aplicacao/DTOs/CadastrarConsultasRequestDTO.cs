@@ -1,3 +1,3 @@
 ﻿namespace ClyvoVet.API.Aplicação.DTOs;
 
-   public record CriarConsultaRequest(string Nome, decimal Preco, int Estoque);
+   public record CriarConsultaRequest(Guid ID, int IdPet, int IdResponsavel, DateTime DataConsulta, string TipoConsulta, string Sintomas, string Status);
