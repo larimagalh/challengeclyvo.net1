@@ -2,7 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using ClyvoVet.API.Data;
 using ClyvoVet.API.Infraestrutura.Health;
 using ClyvoVet.API.Aplicacao.Middlewares;
+using ClyvoVet.API.Infraestrutura.Observabilidade;
 using Serilog;
+using OpenTelemetry.Trace;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +31,25 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddHealthChecks()
     .AddCheck<BancoDadosHealthCheck>("banco_dados") ;
+
+builder.Services.AddOpenTelemetry()
+.ConfigureResource(resource => resource.AddService(AplicacaoMetricas.NomeServico))
+.WithTracing(tracing =>
+{
+    tracing
+.AddAspNetCoreInstrumentation()
+.AddHttpClientInstrumentation()
+.AddSource(AplicacaoMetricas.NomeServico)
+.AddConsoleExporter();
+})
+.WithMetrics(metrics =>
+{
+    metrics
+    .AddAspNetCoreInstrumentation()
+    .AddMeter(AplicacaoMetricas.NomeServico)
+    .AddConsoleExporter();
+});
+
 
 var app = builder.Build();
 
