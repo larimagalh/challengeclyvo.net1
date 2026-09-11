@@ -10,27 +10,35 @@ namespace ClyvoVet.API.Controllers
     public class PetsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly ILogger<PetsController> _logger;
 
-        public PetsController(AppDbContext context)
+        public PetsController(AppDbContext context, ILogger<PetsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pet>>> Get()
         {
+            _logger.LogInformation("Listando todos os Pets no sistema");
             return Ok(await _context.Pets.ToListAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Pet>> GetById(int id)
         {
+            _logger.LogInformation("Procurando por Pet: {petID}", id);
             var pet = await _context.Pets.FindAsync(id);
 
-            if (pet == null)
-                return NotFound();
+            if (pet == null) { 
 
-            return Ok(pet);
+            _logger.LogInformation("Pet nao encontrado");
+            return NotFound($"Pet {id}, não encontrado");
+            
+            }
+            
+        return Ok(pet);
         }
 
         [HttpGet("especie/{especie}")]
