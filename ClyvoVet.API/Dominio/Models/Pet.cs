@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ClyvoVet.API.Models
+namespace ClyvoVet.API.Dominio.Models
 {
     public class Pet
     {
@@ -19,5 +19,6 @@ namespace ClyvoVet.API.Models
         public string StatusSaude { get; set; }
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;
+    
     }
 }
