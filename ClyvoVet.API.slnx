@@ -1,6 +1,5 @@
 <Solution>
-  <Folder Name="/ClyvoVet.API/" />
-  <Folder Name="/ClyvoVet.API/tests/">
+  <Folder Name="/tests/">
     <Project Path="ClyvoVet.API/tests/ClyvoVet.API.Tests.Unit/ClyvoVet.API.Tests.Unit.csproj" />
   </Folder>
   <Project Path="ClyvoVet.API/ClyvoVet.API.csproj" />
