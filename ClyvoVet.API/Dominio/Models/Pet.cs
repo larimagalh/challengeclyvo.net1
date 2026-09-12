@@ -19,5 +19,6 @@ namespace ClyvoVet.API.Dominio.Models
         public string StatusSaude { get; set; }
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;
+    
     }
 }
