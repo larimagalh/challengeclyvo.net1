@@ -157,7 +157,11 @@ dotnet test ClyvoVet.API/tests/ClyvoVet.API.Tests.Unit/ClyvoVet.API.Tests.Unit.c
 # 👩‍💻 Desenvolvido por
 
 Larissa Juvenal de Magalhães RM566457
+
 Matheus Gianolli RM565258
+
 Júlia Kauane Menezes Farias RM565568
+
 Gustavo Ribeiro Permagnani RM564995
+
 Enzo Xavier Coelho RM563379
